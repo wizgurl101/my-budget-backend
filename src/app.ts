@@ -3,8 +3,8 @@ import * as dotenv from "dotenv";
 import swaggerUI from "swagger-ui-express";
 import swaggerJsDoc from "swagger-jsdoc";
 
-import userRoutes from "./routes/userRoutes";
-import {initRollout} from "./services/featureFlagService";
+import userRoutes from "./routes/userRoutes.js";
+import {initRollout} from "./services/featureFlagService.js";
 
 dotenv.config();
 
