@@ -4,10 +4,13 @@ import swaggerUI from "swagger-ui-express";
 import swaggerJsDoc from "swagger-jsdoc";
 
 import userRoutes from "./routes/userRoutes";
+import {initRollout} from "./services/featureFlagService";
 
 dotenv.config();
 
 const app = express();
+
+const flags = await initRollout();
 
 const swaggerOptions = {
   definition: {
