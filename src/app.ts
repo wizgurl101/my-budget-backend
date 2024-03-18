@@ -10,7 +10,14 @@ dotenv.config();
 
 const app = express();
 
-const flags = await initRollout();
+try {
+  const flags = await initRollout();
+  if (flags.testingFlag.isEnabled()){
+    console.log('Testing flag works!');
+  }
+} catch (error) {
+  console.error('Testing flag did not work: ', error);
+}
 
 const swaggerOptions = {
   definition: {
